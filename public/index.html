@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>프로파일 데이터 시각화</title>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    .container {
+      display: flex;
+    }
+    .chart-container {
+      width: 50%; 
+      height: 50%;
+    }
+    .file-list-container {
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>프로파일 데이터 업로드</h1>
+  <form id="uploadForm" enctype="multipart/form-data">
+    <input type="file" name="profile" accept=".txt" required />
+    <button type="submit">업로드</button>
+  </form>
+
+  <h2>데이터 시각화</h2>
+  <div class="container">
+    <div class="chart-container">
+      <canvas id="myChart"></canvas>
+    </div>
+    <div class="options-container">
+      <div>
+        <label for="fileSelect">파일 선택:</label>
+        <select id="fileSelect"></select>
+
+        <label for="coreSelect">코어 선택:</label>
+        <select id="coreSelect">
+          <option value="core1">Core 1</option>
+          <option value="core2">Core 2</option>
+          <option value="core3">Core 3</option>
+          <option value="core4">Core 4</option>
+          <option value="core5">Core 5</option>
+        </select>
+
+        <label for="taskSelect">태스크 선택:</label>
+        <select id="taskSelect">
+          <option value="task1">Task 1</option>
+          <option value="task2">Task 2</option>
+          <option value="task3">Task 3</option>
+          <option value="task4">Task 4</option>
+          <option value="task5">Task 5</option>
+        </select>
+      </div>
+      <h2>저장된 파일들</h2>
+      <div id="fileList" class="file-list-container"></div>
+    </div>
+  </div>
+
+  <script src="upload.js"></script>
+  <script src="chart.js"></script>
+  <script src="files.js"></script>
+</body>
+</html>
