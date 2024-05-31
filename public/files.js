@@ -6,8 +6,8 @@ function loadFileList() {
     .then(data => {
       const fileListDiv = document.getElementById('fileList');
       const fileSelect = document.getElementById('fileSelect');
-      fileListDiv.innerHTML = '';  // 기존 파일 목록을 지움  
-      fileSelect.innerHTML = '';  // 파일 선택 드롭다운의 기존 옵션을 지움  
+      fileListDiv.innerHTML = '';  // 기존 파일 목록을 지움 
+      fileSelect.innerHTML = '';  // 파일 선택 드롭다운의 기존 옵션을 지움
 
       // 파일 데이터를 반복 처리   
       data.forEach(file => {
@@ -19,7 +19,7 @@ function loadFileList() {
         const deleteButton = document.createElement('button');
         deleteButton.textContent = '삭제';
         deleteButton.addEventListener('click', () => {
-          // 파일 삭제 요청을 보냄  
+          // 파일 삭제 요청을 보냄
           fetch(`/files/${file.id}`, {
             method: 'DELETE'
           })
